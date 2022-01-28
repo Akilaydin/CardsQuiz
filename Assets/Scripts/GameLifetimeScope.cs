@@ -1,0 +1,13 @@
+﻿using VContainer;
+using VContainer.Unity;
+
+public class GameLifetimeScope : LifetimeScope
+{
+	protected override void Configure(IContainerBuilder builder)
+	{
+		builder.RegisterEntryPoint<GamePresenter>();
+
+		builder.Register<HelloWorldService>(Lifetime.Singleton);
+	}
+}
+
